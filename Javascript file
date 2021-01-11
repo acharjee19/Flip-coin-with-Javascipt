@@ -1,0 +1,55 @@
+var choice = prompt("Head or reverse");
+
+	if (choice=="head"){
+ 		document.getElementById("img1").setAttribute("src", "head.jpg");
+		document.getElementById("uc").textContent="Head"; 
+		}
+	else if (choice=="reverse"){
+ 		document.getElementById("img1").setAttribute("src", "reverse.jpg");
+		document.getElementById("uc").textContent="Reverse"; 
+		}
+
+
+var head = 0;
+var reverse = 0;
+var wins = 0;
+
+document.getElementById("imgbutton").addEventListener("click", toss);
+
+function toss(){
+	for (let j=0; j<1; j++){
+		random = " ";
+		for (let i=0; i<1; i++){
+			random = random + " " +Math.floor(Math.random()*2+1);
+		}
+
+	if (random==1 && choice=="head"){
+		document.getElementById("img1").setAttribute("src", "head.jpg");
+		head++;
+		document.getElementById("head").textContent = " " + " " + head;
+		wins++;
+		document.getElementById("win").textContent = " " + " " + wins; 
+		}
+
+		if (random==1 && choice=="reverse"){
+			document.getElementById("img1").setAttribute("src", "head.jpg");
+			head++;
+			document.getElementById("head").textContent = " " + " " + head;
+			}
+	if (random==2 && choice=="reverse"){
+		document.getElementById("img1").setAttribute("src", "reverse.jpg");
+		reverse++;
+		document.getElementById("reverse").textContent = " " + " " + reverse;
+		wins++;
+		document.getElementById("win").textContent = " " + " " + wins;
+		}
+
+		if (random==2 && choice=="head"){
+			document.getElementById("img1").setAttribute("src", "reverse.jpg");
+			reverse++;
+			document.getElementById("reverse").textContent = " " + " " + reverse;
+			}
+
+console.log(random);
+	}		
+}
